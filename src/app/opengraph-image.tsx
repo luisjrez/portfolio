@@ -48,7 +48,7 @@ export default function OpenGraphImage() {
             LJ
           </div>
           <div style={{ color: "#00e68a", fontSize: "26px" }}>
-            {profile.availability}
+            {profile.availability.status}
           </div>
         </div>
         <div

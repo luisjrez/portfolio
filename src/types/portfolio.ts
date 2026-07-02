@@ -8,6 +8,19 @@ export interface Stat {
   label: string;
 }
 
+export interface Availability {
+  /** Whether the person is currently looking. */
+  open: boolean;
+  /** Short status line, e.g. "Open to new opportunities". */
+  status: string;
+  /** Work preferences shown as chips, e.g. ["Remote", "Full-time"]. */
+  preferences: string[];
+  /** Timezone label, e.g. "GMT-6 · Mexico". */
+  timezone: string;
+  /** Optional scheduling link (Calendly, cal.com…). */
+  scheduleUrl?: string;
+}
+
 export interface Profile {
   name: string;
   role: string;
@@ -15,7 +28,7 @@ export interface Profile {
   bio: string;
   location: string;
   email: string;
-  availability: string;
+  availability: Availability;
   /** Path to the downloadable résumé, relative to the site root. */
   resumeUrl: string;
   /** Headline metrics shown in the hero stats bar. */
@@ -44,6 +57,13 @@ export interface Project {
   description: string;
   stack: string[];
   href?: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  title: string;
+  company: string;
 }
 
 export interface NavItem {

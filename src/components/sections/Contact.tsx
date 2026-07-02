@@ -45,9 +45,20 @@ export function Contact() {
       <ConnectorLine />
       <Reveal>
         <p className="mx-auto mt-6 max-w-md leading-relaxed text-slate-400">
-          I&apos;m open to interesting mobile and full-stack opportunities. The
-          fastest way to reach me is by email.
+          {profile.availability.open
+            ? `Currently ${profile.availability.status.toLowerCase()} — ${profile.availability.preferences.join(" · ")}. The fastest way to reach me is by email.`
+            : "The fastest way to reach me is by email."}
         </p>
+        {profile.availability.scheduleUrl && (
+          <a
+            href={profile.availability.scheduleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded border border-neon bg-neon px-6 py-3 text-sm font-bold text-hacker-bg transition-all hover:bg-transparent hover:text-neon hover:shadow-neon active:scale-95 motion-reduce:transition-none"
+          >
+            {"<Book_a_call/>"}
+          </a>
+        )}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <CircleLink href={`mailto:${profile.email}`} label="Email" />
           {profile.socialLinks.map((link) => (

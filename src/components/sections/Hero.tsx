@@ -16,13 +16,26 @@ const terminalLines: TerminalLine[] = [
 export function Hero() {
   return (
     <section id="top" className="pt-20 pb-12">
-      <span className="inline-flex items-center gap-2 rounded border border-neon/25 bg-neon/5 px-3 py-1 text-xs font-medium text-neon/90">
-        <span aria-hidden className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon opacity-75 motion-reduce:animate-none" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-neon" />
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="inline-flex items-center gap-2 rounded border border-neon/25 bg-neon/5 px-3 py-1 text-xs font-medium text-neon/90">
+          <span aria-hidden className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon opacity-75 motion-reduce:animate-none" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-neon" />
+          </span>
+          {profile.availability.status}
         </span>
-        {profile.availability}
-      </span>
+        {profile.availability.preferences.map((preference) => (
+          <span
+            key={preference}
+            className="rounded border border-hacker-border px-2.5 py-1 text-xs text-slate-400"
+          >
+            {preference}
+          </span>
+        ))}
+        <span className="rounded border border-hacker-border px-2.5 py-1 text-xs text-slate-500">
+          {profile.availability.timezone}
+        </span>
+      </div>
       <p className="mt-8 text-sm text-slate-400">
         <CodeTag label="<p>" /> <span className="text-neon">This is</span>{" "}
         <CodeTag label="</p>" />
