@@ -72,7 +72,7 @@ export default function OpenGraphImage() {
             maxWidth: "900px",
           }}
         >
-          10+ years shipping React & React Native · full-stack · AI-powered
+          8+ years shipping React & React Native · full-stack · AI-powered
           products
         </div>
       </div>
