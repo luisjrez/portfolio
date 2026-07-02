@@ -24,7 +24,7 @@ export function Header() {
         <a
           href="#top"
           aria-label="Back to top"
-          className="hidden text-neon transition-all hover:text-glow hover:drop-shadow-[0_0_10px_rgba(0,230,138,0.6)] sm:block"
+          className="hidden text-neon transition-all hover:text-glow hover:drop-shadow-[0_0_10px_rgba(0,230,138,0.6)] sm:flex sm:items-center"
         >
           <Logo />
         </a>

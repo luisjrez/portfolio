@@ -14,10 +14,10 @@ export function Logo({ className }: LogoProps) {
       className={cn("h-8 w-8", className)}
     >
       <rect
-        x="2.5"
-        y="2.5"
-        width="59"
-        height="59"
+        x="3"
+        y="3"
+        width="58"
+        height="58"
         rx="12"
         fill="none"
         stroke="currentColor"
@@ -25,9 +25,10 @@ export function Logo({ className }: LogoProps) {
       />
       <text
         x="32"
-        y="43"
+        y="33"
         textAnchor="middle"
-        fontSize="28"
+        dominantBaseline="central"
+        fontSize="26"
         fontWeight="700"
         letterSpacing="1"
         fill="currentColor"
