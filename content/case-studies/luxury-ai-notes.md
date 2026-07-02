@@ -3,7 +3,7 @@ slug: luxury-ai-notes
 title: AI-Powered Contact Notes at Luxury Presence
 company: Luxury Presence
 role: Senior Software Engineer
-period: 2024
+period: 2026
 stack:
   - React Native
   - React

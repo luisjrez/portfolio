@@ -17,3 +17,4 @@ Delivering features end to end across mobile, web and backend for a real-estate 
 - Built AI note experiences — voice-to-text with real-time streaming, plus AI title suggestions, content enhancement and error fixing — with prompts versioned in Langfuse for deploy-free iteration.
 - Migrated the domain from a standalone microservice to the company's federated GraphQL server, building the NestJS resolvers and GraphQL layer; shipped progressively behind feature flags.
 - Rebuilt the CRM and mobile app pixel-perfect on the new architecture, driving work spec-first with clean architecture.
+- Cut the time to interactive of the app's most critical screen from ~20s to ~3s through profiling-driven optimization — taming heavy components, paginating queries and lazy-loading tabs.

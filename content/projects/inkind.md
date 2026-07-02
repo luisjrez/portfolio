@@ -1,6 +1,6 @@
 ---
 name: inKind
-order: 2
+order: 3
 href: https://inkind.com
 stack:
   - React Native

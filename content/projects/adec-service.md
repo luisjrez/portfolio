@@ -1,6 +1,6 @@
 ---
 name: A-dec+ Service
-order: 4
+order: 5
 stack:
   - React Native
   - Image Recognition
