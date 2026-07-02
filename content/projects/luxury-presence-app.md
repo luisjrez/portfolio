@@ -1,6 +1,7 @@
 ---
 name: Luxury Presence Mobile
 order: 1
+href: https://www.luxurypresence.com
 stack:
   - React Native
   - TypeScript

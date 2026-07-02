@@ -1,6 +1,6 @@
 ---
 name: Panic Button
-order: 5
+order: 6
 stack:
   - React Native
   - Firebase

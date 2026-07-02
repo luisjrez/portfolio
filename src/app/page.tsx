@@ -5,6 +5,7 @@ import { CommandPalette } from "@/components/ui/CommandPalette";
 import { MatrixRain } from "@/components/ui/MatrixRain";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
@@ -30,6 +31,7 @@ export default function Home() {
       <Header />
       <main className="mx-auto w-full max-w-3xl flex-1 px-6">
         <Hero />
+        <About />
         <Experience />
         <Projects />
         <Skills />
