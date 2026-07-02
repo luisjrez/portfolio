@@ -2,6 +2,7 @@
 name: Luxury Presence Mobile
 order: 1
 href: https://www.luxurypresence.com
+caseStudy: luxury-ai-notes
 stack:
   - React Native
   - TypeScript

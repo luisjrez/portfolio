@@ -2,6 +2,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { getProjects } from "@/lib/projects";
+import { withBasePath } from "@/lib/base-path";
 import type { Project } from "@/types/portfolio";
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -38,6 +39,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <Tag key={tech} label={tech} />
         ))}
       </div>
+      {project.caseStudy && (
+        <a
+          href={withBasePath(`/case-study/${project.caseStudy}`)}
+          className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-neon/80 transition-colors hover:text-neon"
+        >
+          Read case study
+          <span aria-hidden>→</span>
+        </a>
+      )}
     </article>
   );
 }

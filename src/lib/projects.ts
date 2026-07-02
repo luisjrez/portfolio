@@ -6,6 +6,7 @@ interface ProjectFrontmatter {
   order?: number;
   stack?: string[];
   href?: string;
+  caseStudy?: string;
 }
 
 /**
@@ -24,5 +25,6 @@ export function getProjects(): Project[] {
       description: parseLeadParagraph(body),
       stack: frontmatter.stack ?? [],
       href: frontmatter.href,
+      caseStudy: frontmatter.caseStudy,
     }));
 }

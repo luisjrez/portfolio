@@ -1,18 +1,19 @@
 ---
-role: Senior Mobile Engineer
+role: Senior Software Engineer
 company: Luxury Presence
 period: Oct 2023 — Present
 order: 1
 stack:
   - React Native
-  - TypeScript
+  - React
   - NestJS
+  - Federated GraphQL
   - AI Integration
 ---
 
-Building and maintaining the company's mobile app, which powers 100+ white-label clients from a single shared codebase.
+Delivering features end to end across mobile, web and backend for a real-estate platform serving 100+ white-label clients from a shared codebase.
 
-- Shipped an AI-powered note-taking feature (voice dictation + AI content refinement) that streamlines how agents capture client interactions.
-- Improved the load performance of the app's most critical screens, partnering with QA to profile and eliminate bottlenecks.
-- Built the frontend and backend for a new CRM collaboration dashboard, enabling agents and clients to share properties and searches in real time.
-- Deliver features end to end across mobile, web and backend — from data model to UI — reducing hand-off friction across teams.
+- Led an end-to-end contact-notes feature: planned and ran a production migration of 70k+ notes into a new per-contact model, unlocking AI features on isolated data (147k+ notes created since).
+- Built AI note experiences — voice-to-text with real-time streaming, plus AI title suggestions, content enhancement and error fixing — with prompts versioned in Langfuse for deploy-free iteration.
+- Migrated the domain from a standalone microservice to the company's federated GraphQL server, building the NestJS resolvers and GraphQL layer; shipped progressively behind feature flags.
+- Rebuilt the CRM and mobile app pixel-perfect on the new architecture, driving work spec-first with clean architecture.

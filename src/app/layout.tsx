@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { profile } from "@/data/profile";
 import "./globals.css";
+
+// Privacy-friendly analytics (GoatCounter). Set NEXT_PUBLIC_GOATCOUNTER to
+// your endpoint (e.g. https://<code>.goatcounter.com/count) to enable it.
+const analyticsEndpoint = process.env.NEXT_PUBLIC_GOATCOUNTER;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,6 +61,13 @@ export default function RootLayout({
     >
       <body className="relative flex min-h-full flex-col bg-hacker-bg text-slate-200">
         {children}
+        {analyticsEndpoint && (
+          <Script
+            src="https://gc.zgo.at/count.js"
+            data-goatcounter={analyticsEndpoint}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

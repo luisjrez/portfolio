@@ -57,6 +57,8 @@ export interface Project {
   description: string;
   stack: string[];
   href?: string;
+  /** Slug of a case study page, if this project has one. */
+  caseStudy?: string;
 }
 
 export interface Testimonial {
@@ -64,6 +66,21 @@ export interface Testimonial {
   author: string;
   title: string;
   company: string;
+}
+
+export interface CaseStudyMeta {
+  slug: string;
+  title: string;
+  company: string;
+  role: string;
+  period: string;
+  stack: string[];
+  metrics: Stat[];
+}
+
+export interface CaseStudy extends CaseStudyMeta {
+  /** Rendered HTML of the markdown body. */
+  contentHtml: string;
 }
 
 export interface NavItem {
