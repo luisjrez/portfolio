@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { MatrixRain } from "@/components/ui/MatrixRain";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
 import { Experience } from "@/components/sections/Experience";
@@ -11,6 +12,7 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
+      <MatrixRain />
       <div aria-hidden className="bg-grid pointer-events-none fixed inset-0 -z-10" />
       <div
         aria-hidden
