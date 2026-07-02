@@ -1,9 +1,12 @@
 ---
-title: Backend
+title: Backend & Data
 order: 3
 ---
 
 - NestJS
-- Prisma
+- Node.js
+- Python
+- Django / DRF
 - PostgreSQL
-- Docker
+- Prisma
+- Redis

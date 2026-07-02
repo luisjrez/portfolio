@@ -1,3 +1,4 @@
+import { Logo } from "@/components/ui/Logo";
 import { navItems } from "@/data/navigation";
 import type { NavItem } from "@/types/portfolio";
 
@@ -22,9 +23,10 @@ export function Header() {
       <div className="mx-auto flex max-w-3xl items-center justify-center px-6 py-4 sm:justify-between">
         <a
           href="#top"
-          className="hidden whitespace-nowrap text-sm font-bold tracking-tight text-neon text-glow sm:block"
+          aria-label="Back to top"
+          className="hidden text-neon transition-all hover:text-glow hover:drop-shadow-[0_0_10px_rgba(0,230,138,0.6)] sm:block"
         >
-          {"<LJ/>"}
+          <Logo />
         </a>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 sm:gap-x-6">
           {navItems.map((item, index) => (

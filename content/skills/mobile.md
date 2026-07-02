@@ -4,7 +4,8 @@ order: 1
 ---
 
 - React Native
+- Expo & EAS
 - TypeScript
-- JavaScript
-- E2E — Maestro
-- E2E — Appium
+- React Navigation
+- Maestro E2E
+- App Center

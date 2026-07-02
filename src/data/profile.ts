@@ -2,20 +2,18 @@ import type { Profile } from "@/types/portfolio";
 
 export const profile: Profile = {
   name: "Luis Juárez",
-  role: "Senior Mobile Engineer",
-  headline: "I build reliable, well-tested mobile and web products.",
-  bio: "Senior mobile engineer specialized in React Native and React, with strong experience across the full stack — from TypeScript frontends with Next.js and Vite, to NestJS APIs backed by PostgreSQL and Prisma. I care about clean architecture, strict typing, and end-to-end testing.",
-  location: "Mexico",
+  role: "Senior Software Engineer",
+  headline:
+    "I build and ship reliable mobile and web products — from white-label apps at scale to full-stack features end to end.",
+  bio: "Senior software engineer with 10+ years building products with React and React Native, backed by full-stack experience across Python (Django/DRF), NestJS, PostgreSQL, Redis and Docker. I've shipped white-label mobile apps to 100+ clients from a single codebase, delivered features end to end across mobile, web and backend, and integrated AI-powered experiences into production apps. I care about clean architecture, performance and pragmatic delivery.",
+  location: "Villahermosa, Mexico",
   email: "luismanueljf@gmail.com",
   availability: "Open to new opportunities",
   taglines: [
-    "Senior Mobile Engineer",
+    "Senior Software Engineer",
     "React Native specialist",
-    "Full-stack TypeScript",
-    "E2E testing advocate",
+    "Full-stack: React, NestJS, Python",
+    "AI-powered product builder",
   ],
-  socialLinks: [
-    { label: "GitHub", href: "https://github.com/luisjuarez" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/luisjuarez" },
-  ],
+  socialLinks: [{ label: "GitHub", href: "https://github.com/luisjrez" }],
 };

@@ -4,6 +4,8 @@ order: 2
 ---
 
 - React
-- Next.js
-- Vite
-- GraphQL
+- JavaScript
+- TypeScript
+- Redux
+- Zustand
+- Sass

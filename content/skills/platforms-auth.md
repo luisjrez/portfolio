@@ -1,9 +1,10 @@
 ---
-title: Platforms & Auth
+title: Platforms & DevOps
 order: 4
 ---
 
-- Supabase
+- Docker
+- AWS
 - Firebase
-- Auth0
-- Keycloak
+- Linux
+- Feature Flags
