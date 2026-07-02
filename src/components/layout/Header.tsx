@@ -1,3 +1,4 @@
+import { CommandHint } from "@/components/ui/CommandHint";
 import { Logo } from "@/components/ui/Logo";
 import { navItems } from "@/data/navigation";
 import type { NavItem } from "@/types/portfolio";
@@ -32,6 +33,7 @@ export function Header() {
           {navItems.map((item, index) => (
             <HeaderNavLink key={item.href} item={item} index={index} />
           ))}
+          <CommandHint />
         </nav>
       </div>
     </header>

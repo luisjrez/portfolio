@@ -3,6 +3,11 @@ export interface SocialLink {
   href: string;
 }
 
+export interface Stat {
+  value: string;
+  label: string;
+}
+
 export interface Profile {
   name: string;
   role: string;
@@ -11,6 +16,10 @@ export interface Profile {
   location: string;
   email: string;
   availability: string;
+  /** Path to the downloadable résumé, relative to the site root. */
+  resumeUrl: string;
+  /** Headline metrics shown in the hero stats bar. */
+  stats: Stat[];
   /** Phrases cycled by the hero typewriter animation. */
   taglines: string[];
   socialLinks: SocialLink[];

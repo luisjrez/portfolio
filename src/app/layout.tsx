@@ -13,9 +13,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = `${profile.name} — ${profile.role}`;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.role}`,
+  metadataBase: new URL(siteUrl),
+  title,
   description: profile.headline,
+  keywords: [
+    "Senior Software Engineer",
+    "React Native",
+    "React",
+    "TypeScript",
+    "NestJS",
+    "Mobile Engineer",
+    "Full Stack Developer",
+    profile.name,
+  ],
+  authors: [{ name: profile.name }],
+  openGraph: {
+    title,
+    description: profile.headline,
+    type: "website",
+    siteName: title,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: profile.headline,
+  },
 };
 
 export default function RootLayout({

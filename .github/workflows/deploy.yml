@@ -28,6 +28,7 @@ jobs:
           cache: npm
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
 
       # Project sites are served at /<repo-name>; user/org sites (repo named
@@ -51,6 +52,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.basepath.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}${{ steps.basepath.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

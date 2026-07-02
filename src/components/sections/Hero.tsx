@@ -2,7 +2,9 @@ import { CodeTag } from "@/components/ui/CodeTag";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Terminal, type TerminalLine } from "@/components/ui/Terminal";
 import { Typewriter } from "@/components/ui/Typewriter";
+import { Stats } from "@/components/sections/Stats";
 import { profile } from "@/data/profile";
+import { withBasePath } from "@/lib/base-path";
 
 const terminalLines: TerminalLine[] = [
   { kind: "command", text: "cat about.txt" },
@@ -49,10 +51,18 @@ export function Hero() {
         >
           {"<Get_in_touch/>"}
         </a>
+        <a
+          href={withBasePath(profile.resumeUrl)}
+          download
+          className="rounded border border-neon/40 px-5 py-2.5 text-sm font-bold text-neon transition-all hover:border-neon hover:shadow-neon active:scale-95 motion-reduce:transition-none"
+        >
+          {"<Download_CV/>"}
+        </a>
         {profile.socialLinks.map((link) => (
           <ExternalLink key={link.href} href={link.href} label={link.label} />
         ))}
       </div>
+      <Stats />
     </section>
   );
 }

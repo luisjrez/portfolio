@@ -9,6 +9,13 @@ export const profile: Profile = {
   location: "Villahermosa, Mexico",
   email: "luismanueljf@gmail.com",
   availability: "Open to new opportunities",
+  resumeUrl: "/luis-juarez-cv.pdf",
+  stats: [
+    { value: "10+", label: "years shipping" },
+    { value: "100+", label: "white-label clients" },
+    { value: "15+", label: "apps delivered" },
+    { value: "4", label: "countries reached" },
+  ],
   taglines: [
     "Senior Software Engineer",
     "React Native specialist",
