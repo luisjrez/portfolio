@@ -3,9 +3,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const GRID = 20;
-const CELL = 16;
+const CELL = 15;
 const TICK_MS = 110;
 const CANVAS_SIZE = GRID * CELL;
+
+interface SnakeGameProps {
+  onExit?: () => void;
+}
 
 interface Point {
   x: number;
@@ -59,7 +63,7 @@ const INITIAL_SNAKE: Point[] = [
   { x: 6, y: 10 },
 ];
 
-export function SnakeGame() {
+export function SnakeGame({ onExit }: SnakeGameProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const snakeRef = useRef<Point[]>(INITIAL_SNAKE);
   const directionRef = useRef<Direction>("right");
@@ -177,14 +181,18 @@ export function SnakeGame() {
   }, [isGameOver, runId]);
 
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col gap-3">
+      <p className="text-sm">
+        <span className="text-neon">$ </span>
+        <span className="text-slate-300">./snake</span>
+      </p>
       <div className="flex w-full items-center justify-between text-xs text-slate-400">
         <span>
           <span className="text-neon">score</span> {score}
         </span>
-        <span className="text-slate-500">↑ ↓ ← → to move · Esc to close</span>
+        <span className="text-slate-500">↑ ↓ ← → move · Esc exit</span>
       </div>
-      <div className="relative">
+      <div className="relative w-fit">
         <canvas
           ref={canvasRef}
           width={CANVAS_SIZE}
@@ -195,13 +203,24 @@ export function SnakeGame() {
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded bg-hacker-bg/85 backdrop-blur-sm">
             <p className="text-lg font-bold text-neon text-glow">GAME OVER</p>
             <p className="text-xs text-slate-400">score: {score}</p>
-            <button
-              type="button"
-              onClick={reset}
-              className="cursor-pointer rounded border border-neon px-4 py-2 text-xs font-bold text-neon transition-all hover:bg-neon hover:text-hacker-bg active:scale-95"
-            >
-              {"<Play_again/>"}
-            </button>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={reset}
+                className="cursor-pointer rounded border border-neon px-4 py-2 text-xs font-bold text-neon transition-all hover:bg-neon hover:text-hacker-bg active:scale-95"
+              >
+                {"<Play_again/>"}
+              </button>
+              {onExit && (
+                <button
+                  type="button"
+                  onClick={onExit}
+                  className="cursor-pointer rounded border border-hacker-border px-4 py-2 text-xs font-bold text-slate-400 transition-all hover:border-neon/50 hover:text-neon active:scale-95"
+                >
+                  {"<Exit/>"}
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>

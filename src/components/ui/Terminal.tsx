@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SnakeGame } from "@/components/ui/SnakeGame";
 
 export interface TerminalLine {
   kind: "command" | "output";
@@ -30,7 +31,28 @@ export function Terminal({
 }: TerminalProps) {
   const [lineIndex, setLineIndex] = useState(0);
   const [charCount, setCharCount] = useState(0);
+  const [snakeMode, setSnakeMode] = useState(false);
   const isDone = lineIndex >= lines.length;
+
+  // Konami code boots Snake inside this terminal (see KonamiListener).
+  useEffect(() => {
+    const start = () => setSnakeMode(true);
+    window.addEventListener("hero-snake:start", start);
+    return () => window.removeEventListener("hero-snake:start", start);
+  }, []);
+
+  useEffect(() => {
+    if (!snakeMode) {
+      return;
+    }
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSnakeMode(false);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [snakeMode]);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia(
@@ -69,10 +91,17 @@ export function Terminal({
         <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
         <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-amber-flame/70" />
         <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-neon/70" />
-        <span className="ml-2 text-xs text-slate-500">{host}</span>
+        <span className="ml-2 text-xs text-slate-500">
+          {snakeMode ? `${host} — ./snake` : host}
+        </span>
       </div>
-      <div className="space-y-3 px-4 py-4 text-sm leading-relaxed" aria-live="polite">
-        {lines.slice(0, lineIndex).map((line) =>
+      {snakeMode ? (
+        <div className="px-4 py-4">
+          <SnakeGame onExit={() => setSnakeMode(false)} />
+        </div>
+      ) : (
+        <div className="space-y-3 px-4 py-4 text-sm leading-relaxed" aria-live="polite">
+          {lines.slice(0, lineIndex).map((line) =>
           line.kind === "command" ? (
             <p key={line.text}>
               <Prompt />
@@ -95,15 +124,16 @@ export function Terminal({
             </span>
           </p>
         )}
-        {isDone && (
-          <p>
-            <Prompt />
-            <span aria-hidden className="animate-blink text-neon">
-              ▊
-            </span>
-          </p>
-        )}
-      </div>
+          {isDone && (
+            <p>
+              <Prompt />
+              <span aria-hidden className="animate-blink text-neon">
+                ▊
+              </span>
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

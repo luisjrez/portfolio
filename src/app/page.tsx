@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { CommandPalette } from "@/components/ui/CommandPalette";
-import { KonamiSnake } from "@/components/ui/KonamiSnake";
+import { KonamiListener } from "@/components/ui/KonamiListener";
 import { MatrixRain } from "@/components/ui/MatrixRain";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
@@ -31,7 +31,7 @@ export default function Home() {
       <ScrollProgress />
       <BackToTop />
       <CommandPalette />
-      <KonamiSnake />
+      <KonamiListener />
       <Header />
       <main className="mx-auto w-full max-w-3xl flex-1 px-6">
         <Hero />
