@@ -96,7 +96,7 @@ export function Terminal({
         </span>
       </div>
       {snakeMode ? (
-        <div className="px-4 py-4">
+        <div className="relative h-80">
           <SnakeGame onExit={() => setSnakeMode(false)} />
         </div>
       ) : (
