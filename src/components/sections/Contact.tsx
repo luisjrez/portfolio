@@ -79,6 +79,9 @@ export function Contact() {
             {profile.email}
           </a>
         </p>
+        <p className="mt-6 select-none text-xs text-slate-700">
+          <span aria-hidden># psst — try ↑↑↓↓←→←→</span>
+        </p>
       </Reveal>
     </section>
   );
