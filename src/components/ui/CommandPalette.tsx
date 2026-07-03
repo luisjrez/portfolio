@@ -186,6 +186,7 @@ export function CommandPalette() {
             spellCheck={false}
             autoComplete="off"
             aria-label="Terminal command"
+            data-terminal-input
             className="flex-1 bg-transparent text-sm text-slate-200 outline-none placeholder:text-slate-600"
             placeholder="help"
           />

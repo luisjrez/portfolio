@@ -10,3 +10,4 @@ order: 3
 - PostgreSQL
 - Prisma
 - Redis
+- Kafka

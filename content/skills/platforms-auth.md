@@ -1,10 +1,9 @@
 ---
-title: Platforms & DevOps
-order: 4
+title: DevOps
+order: 5
 ---
 
 - Docker
-- AWS
 - Firebase
 - Linux
 - Feature Flags

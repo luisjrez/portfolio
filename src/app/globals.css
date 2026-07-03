@@ -85,8 +85,9 @@ body {
   color: var(--color-hacker-bg);
 }
 
-/* Visible keyboard focus ring (only for keyboard users) */
-:focus-visible {
+/* Visible keyboard focus ring (only for keyboard users).
+   The terminal command input opts out so it keeps its bare-terminal feel. */
+:focus-visible:not([data-terminal-input]) {
   outline: 2px solid var(--color-neon);
   outline-offset: 2px;
   border-radius: 2px;
